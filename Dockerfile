@@ -10,10 +10,10 @@ ADD . /go/src/gojsonrest
 # either manually or with a tool like "godep".)
 RUN go get github.com/ant0ine/go-json-rest/rest
 RUN go build gojsonrest
-RUN go install gojsonrest 
+RUN go install gojsonrest
 
 # Run the outyet command by default when the container starts.
-ENTRYPOINT /go/bin/gojsonrest
+ENTRYPOINT ["/go/bin/gojsonrest"]
 
 # Document that the service listens on port 8080.
 EXPOSE 8080
